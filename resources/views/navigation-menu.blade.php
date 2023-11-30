@@ -26,6 +26,7 @@
                         {{ __('Roles') }}
                     </x-nav-link>
                 </div>
+<<<<<<< HEAD
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.inductions') }}" :active="request()->routeIs('admin.inductions')">
                         {{ __('Organizar Inducción') }}
@@ -36,9 +37,17 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
+=======
+                <div class="mt-2">
+            
+        </div>
+>>>>>>> 48e80d060b20a18c59b057f5864a313763c88268
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
+
+            
+            
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
@@ -91,6 +100,7 @@
                     </div>
                 @endif
 
+
                 <!-- Settings Dropdown -->
                 <div class="ms-3 relative">
                     <x-dropdown align="right" width="48">
@@ -142,6 +152,17 @@
                         </x-slot>
                     </x-dropdown>
                 </div>
+
+                <!-- boton de cierre -->
+            <form method="POST" action="{{ route('logout') }}" x-data>
+                @csrf
+                <x-responsive-nav-link href="{{ route('logout') }}"
+                                   @click.prevent="$root.submit();">
+                    <button type="submit" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        {{ __('Cerrar Sesión') }}
+                    </button>
+                </x-responsive-nav-link>
+            </form>
             </div>
 
             <!-- Hamburger -->

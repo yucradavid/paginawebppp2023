@@ -6,8 +6,20 @@
     </x-slot>
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
-        <x-input label="Fecha de la Inducción" placeholder="Ejemplo: 20/09/2023" wire:model="form.date"/>
+        <label for="fecha_induccion" class="block text-sm font-medium text-gray-700">Fecha de la Inducción</label>
+        <input type="date" id="fecha_induccion" name="fecha_induccion" wire:model="form.date" class="mt-1 p-2 border rounded-md w-full" onchange="formatDateInput(this)">
     </div>
+
+    <script>
+        function formatDateInput(input) {
+            const dateValue = input.value;
+            if (dateValue) {
+                const dateObj = new Date(dateValue);
+                const formattedDate = `${dateObj.getFullYear()}-${(dateObj.getMonth() + 1).toString().padStart(2, '0')}-${dateObj.getDate().toString().padStart(2, '0')}`;
+                input.value = formattedDate;
+            }
+        }
+    </script>
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-input label="Lugar de la Inducción" placeholder="Ejemplo: Aula Magna" wire:model="form.location"/>

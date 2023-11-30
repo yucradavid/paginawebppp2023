@@ -19,7 +19,7 @@ class InductionFactory extends Factory
     public function definition(): array
     {
         return [
-            'date' => $this->faker->date,
+            'date' => $this->faker->date(),
             'location' => $this->faker->word,
             'time' => $this->faker->time,
             'responsible' => $this->faker->name,
