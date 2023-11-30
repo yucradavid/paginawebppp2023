@@ -300,12 +300,7 @@ a:hover {
 
             <iframe width="1213" height="550" src="https://www.youtube.com/embed/TyVW3wNjuww" title="UPeU | #UniversidadesQueMejoran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <div>
-        <img src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg" alt="Imagen 2">
-    </div>
-    <div>
-        <img src="https://www.tooltyp.com/wp-content/uploads/2014/10/1900x920-8-beneficios-de-usar-imagenes-en-nuestros-sitios-web.jpg" alt="Imagen 3">
-    </div>
+    
     <!-- Add more images as needed -->
 </div>
 
