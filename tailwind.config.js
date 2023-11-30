@@ -9,7 +9,7 @@ export default {
     ],
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
+        './vendor/laravel/jetstream/**s/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './vendor/wireui/wireui/resources/**/*.blade.php',

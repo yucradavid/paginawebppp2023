@@ -63,12 +63,12 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-    'logo_img_class' => 'brand-image img-circle elevation-3',
+    'logo' => '<b>home</b>UPeU',
+    'logo_img' => 'https://upeu.edu.pe/wp-content/uploads/2022/03/03.png',
+    'logo_img_class' => 'brand-image  ',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'home UPeU',
 
     /*
     |--------------------------------------------------------------------------
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/8b/6f/0f/8b6f0f3d-78cd-af0d-737e-b7fdb2fd426c/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x600wa.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -107,9 +107,9 @@ return [
     */
 
     'preloader' => [
-        'enabled' => true,
+        'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'https://upeu.edu.pe/wp-content/uploads/2022/03/04.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -130,11 +130,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
+    'usermenu_header' => true,
     'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
+    'usermenu_image' => true,
     'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -167,11 +167,11 @@ return [
     |
     */
 
-    'classes_auth_card' => 'card-outline card-primary',
-    'classes_auth_header' => '',
+    'classes_auth_card' => '',
+    'classes_auth_header' => 'bg-gradient-info',
     'classes_auth_body' => '',
-    'classes_auth_footer' => '',
-    'classes_auth_icon' => '',
+    'classes_auth_footer' => 'text-center',
+    'classes_auth_icon' => 'fa-lg text-info',
     'classes_auth_btn' => 'btn-flat btn-primary',
 
     /*
@@ -194,7 +194,7 @@ return [
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-4',
     'classes_sidebar_nav' => '',
-    'classes_topnav' => 'navbar-white navbar-light',
+    'classes_topnav' => 'navbar-dark navbar-light',
     'classes_topnav_nav' => 'navbar-expand',
     'classes_topnav_container' => 'container',
 
@@ -218,7 +218,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 400,
 
     /*
     |--------------------------------------------------------------------------
@@ -232,7 +232,7 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -311,24 +311,40 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
+
+        //navergador 1
+
         [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'text' => 'lista de roles',
+            'url'  => 'admin/roles',
+            'icon' => 'fas fa-users-cog fa-fw',
+            'can'  => 'editar usuarios',
         ],
-        ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'Configurar',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-cog',
+        ],
+
+        //navergador 1
+
+        [
+            'text' => 'organizar induccion',
+            'url'  => 'admin/inductions',
+            'icon' => 'fas fa-users-cog fa-fw',
+            'can'  => 'editar usuarios',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Configurar',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-cog',
         ],
+
+        //navegador 2
+
+        ['header' => 'Opciones'],
+
+
         [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
@@ -366,7 +382,7 @@ return [
                     'url'  => '#',
                 ],
             ],
-            
+
         ],
         ['header' => 'labels'],
         [

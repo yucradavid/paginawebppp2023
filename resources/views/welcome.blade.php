@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
 
         <title>Laravel</title>
 
@@ -16,7 +16,7 @@
 
 
         <!-- Styles -->
-        
+
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -216,7 +216,7 @@ a:hover {
     background-color: #333;
     color: #fff;
     padding: 20px;
-    
+
     bottom: 0;
     width: 100%;
 }
@@ -246,8 +246,8 @@ a:hover {
 }
 
 </style>
-    
-    
+
+
     <style>
     /* Estilos para el modal */
     .modal {
@@ -311,13 +311,13 @@ a:hover {
 
             <iframe width="1213" height="550" src="https://www.youtube.com/embed/TyVW3wNjuww" title="UPeU | #UniversidadesQueMejoran" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    
+
     <!-- Add more images as needed -->
 </div>
 
 </main>
 
-   
+
 
 
 
@@ -367,7 +367,7 @@ a:hover {
 
   </div>
 </div>
-    
+
     <footer class="footer">
     <div class="flex">
         <div class="footer-link">
@@ -384,7 +384,7 @@ a:hover {
         <p>&copy; 2023 Tu Sitio. Todos los derechos reservados.</p>
     </div>
 </footer>
-    
+
 
     <!-- Resto del contenido -->
 <script>

@@ -26,15 +26,25 @@
                         {{ __('Roles') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('admin.inductions') }}" :active="request()->routeIs('admin.inductions')">
+                        {{ __('Organizar Inducción') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('admin.competitors') }}" :active="request()->routeIs('admin.competitors')">
+                        {{ __('Ejecutar Inducción') }}
+                    </x-nav-link>
+                </div>
                 <div class="mt-2">
-            
+
         </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
 
-            
-            
+
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
