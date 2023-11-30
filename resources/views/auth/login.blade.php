@@ -27,7 +27,7 @@
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
+                    <input type="checkbox" id="remember_me" name="remember" {{ old('remember') ? 'checked' : '' }} class="form-checkbox">
                     <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
             </div>
@@ -38,13 +38,8 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
-<<<<<<< Updated upstream
 
-                <x-button type="submit" class="ms-4">
-=======
-                
                 <x-button class="ms-4" type="submit">
->>>>>>> Stashed changes
                     {{ __('Log in') }}
                 </x-button>
             </div>
