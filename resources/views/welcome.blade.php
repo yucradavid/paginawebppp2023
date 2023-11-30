@@ -28,13 +28,14 @@
         font-family: 'Figtree', sans-serif;
         margin: 0;
         padding: 0;
+        background-color: rosybrown;
     }
 
     .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #FFC0CB;
     padding: 10px;
     color: #fff;
 
@@ -280,6 +281,7 @@ a:hover {
 
 
 <body>
+
 <header>
     <nav class="navbar">
         <div class="flex">
@@ -288,12 +290,21 @@ a:hover {
             <a href="{{ url('/quienes-somos') }}">Quiénes Somos</a>
             <a href="{{ url('/contactanos') }}">Contáctanos</a>
         </div>
-        
+
         <div class="login">
             <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </div>
     </nav>
 </header>
+
+<section class="welcome-section">
+        <div class="welcome-content">
+            <h1>Bienvenido a la Universidad Peruana Unión</h1>
+            <p>Somos una institución dedicada a la excelencia académica y la formación de profesionales. Descubre nuestro compromiso con la educación de calidad y el desarrollo personal.</p>
+            <a href="#mas-informacion">Más información</a>
+        </div>
+    </section>
+
 <main>
 <div class="slider">
     <div>
@@ -306,13 +317,7 @@ a:hover {
 
 </main>
 
-    <section class="welcome-section">
-        <div class="welcome-content">
-            <h1>Bienvenido a la Universidad Peruana Unión</h1>
-            <p>Somos una institución dedicada a la excelencia académica y la formación de profesionales. Descubre nuestro compromiso con la educación de calidad y el desarrollo personal.</p>
-            <a href="#mas-informacion">Más información</a>
-        </div>
-    </section>
+   
 
 
 
