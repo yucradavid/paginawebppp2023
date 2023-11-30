@@ -13,11 +13,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+        @wireUiScripts
         <!-- Styles -->
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
+        <x-dialog />
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
