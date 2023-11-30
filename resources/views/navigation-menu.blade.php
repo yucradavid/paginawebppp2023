@@ -27,6 +27,9 @@
                     </x-nav-link>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f108b83c159e402508d5d6ffea39d07dba730840
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.inductions') }}" :active="request()->routeIs('admin.inductions')">
                         {{ __('Organizar Inducción') }}
@@ -37,17 +40,23 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
+<<<<<<< HEAD
 =======
                 <div class="mt-2">
             
         </div>
 >>>>>>> 48e80d060b20a18c59b057f5864a313763c88268
+=======
+                <div class="mt-2">
+
+        </div>
+>>>>>>> f108b83c159e402508d5d6ffea39d07dba730840
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
 
-            
-            
+
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">

@@ -14,13 +14,15 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $role=Role::create(['name'=>'Administrador']);
-        $role->permissions()->attach([1,2,3,4,5,6,7,8,9]);
-
-        $role=Role::create(['name'=>'Supervisor']);
-        $role->syncPermissions([1,2,3,4,5]);
+        $role->permissions()->attach([1,2,3,4,5,6,7,8,9,10]);
 
         $role=Role::create(['name'=>'Estudiante']);
-        $role->syncPermissions(['Listar empresas','Solicitar carta','Subir Documentos','Eliminar documentos']);
+        $role->syncPermissions([1,6,7,8,9]);
+
+        $role=Role::create(['name'=>'Supervisor']);
+        $role->syncPermissions([10]);
+
+        
 
     }
 }

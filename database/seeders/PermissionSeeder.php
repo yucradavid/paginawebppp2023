@@ -18,19 +18,21 @@ class PermissionSeeder extends Seeder
     'name'=>'Ver dashboard'
 ]);
 
-//Supervisor
+//administrador
 Permission::create([
-    'name'=>'Listar estudiantes'
+    'name'=>'editar usuarios'
 ]);
 Permission::create([
-    'name'=>'Crear estudiantes'
+    'name'=>'Crear usuarios'
 ]);
 Permission::create([
-    'name'=>'Editar estudiantes'
+    'name'=>'eliminar usuarios'
 ]);
+
 Permission::create([
-    'name'=>'Eliminar estudiantes'
+    'name'=>'listar usuario'
 ]);
+
 //Estudiante
 Permission::create([
     'name'=>'Listar empresas'
@@ -44,5 +46,12 @@ Permission::create([
 Permission::create([
     'name'=>'Eliminar documentos'
 ]);
+
+// supervisor
+Permission::create([
+    'name'=>'Listar progreso'
+]);
     }
 }
+
+
