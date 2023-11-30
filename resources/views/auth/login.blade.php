@@ -38,8 +38,13 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
+<<<<<<< Updated upstream
 
                 <x-button type="submit" class="ms-4">
+=======
+                
+                <x-button class="ms-4" type="submit">
+>>>>>>> Stashed changes
                     {{ __('Log in') }}
                 </x-button>
             </div>
