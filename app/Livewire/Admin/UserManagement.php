@@ -37,7 +37,7 @@ class UserManagement extends Component
             User::create([
                 'name'=>$this->form->name,
                 'email'=>$this->form->email,
-                'password'=>Hash::make($this->form->password),
+                'password'=>Hash::make($this->form->password)
             ]);
             $this->dialog()->success(
                 $title = 'Mensaje del sistema',
@@ -46,9 +46,10 @@ class UserManagement extends Component
         }else{
             $user=User::find($this->form->user->id);
             $user->update([
+
                 'name'=>$this->form->name,
                 'email'=>$this->form->email,
-                'password'=>Hash::make($this->form->password),
+                'password'=>Hash::make($this->form->password)
 
             ]);
             $user->roles()->sync(array_keys($this->selectroles,'true'));
