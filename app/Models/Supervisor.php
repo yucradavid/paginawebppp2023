@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Supervisor extends Model
 {
     use HasFactory;
+
+    protected $guarded=['id'];
+
+    public function practicing(){
+        return $this->hasMany(practicing::class);
+    }
+
 }

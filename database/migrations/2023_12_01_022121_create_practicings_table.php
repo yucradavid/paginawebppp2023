@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('practicings', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('stage',['primera','segunda','tercera']);
+            $table->string('company');
+            $table->string('cellphone');
+
             $table->timestamps();
         });
     }
