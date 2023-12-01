@@ -30,7 +30,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
                 @forelse($practicantes and $supervisors and $practicings as $item)
                     <div class="bg-gray-500 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
-                        <img src="{{ $item->images }}" class="w-full h-48 object-cover mb-4 rounded-md" alt="images">
+                        <h2>DATOS</h2>
                         <div class="text-gray-900">
                             <strong>ID:</strong> {{ $item->id }}<br>
                             <strong>Practicante: </strong>{{ $item->practicante }}<br>
@@ -43,8 +43,9 @@
                         </div>
                         <div class="flex justify-between">
                             <a href="{{ $item->enlace }}" class="btn btn-primary btn-sm">Ver Calificaciones</a>
-                            <a href="{{ $item->cellphone }}" class="btn btn-primary btn-sm">Ver más</a>
-                        </div>
+                            <x-nav-link href="{{ route('admin.evaluation') }}" :active="request()->routeIs('admin.evaluation')">
+                                {{ __('Supervisión de Evaluación del Desempeño') }}
+                            </x-nav-link>                        </div>
                         <div class="flex gap-1 justify-end">
 
                             <div>
