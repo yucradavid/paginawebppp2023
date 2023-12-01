@@ -4,7 +4,9 @@
             Registro nueva inducción
         </h2>
     </x-slot>
-
+    <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <x-input label="Titulo" placeholder="Ejemplo:Introduccion de Practicas Pre Profecionales " wire:model="form.title"/>
+    </div>
     <div class="my-2 md:mr-2 md:mb-0 w-full">
         <label for="fecha_induccion" class="block text-sm font-medium text-gray-700">Fecha de la Inducción</label>
         <input type="date" id="fecha_induccion" name="fecha_induccion" wire:model="form.date" class="mt-1 p-2 border rounded-md w-full" onchange="formatDateInput(this)">
@@ -23,6 +25,15 @@
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-input label="Lugar de la Inducción" placeholder="Ejemplo: Aula Magna" wire:model="form.location"/>
+    </div>
+
+    <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <x-native-select
+        icon="list-bullet"
+            label="Selecione El Archivo"
+            placeholder="Ver Archivos"
+            :options="$materials->pluck('file_type')"
+            wire:model="form.file_type"        />
     </div>
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
@@ -50,16 +61,33 @@
 
 
 
-    <div class="my-2 md:mr-2 md:mb-0 w-full">
-        <x-input label="Duración (en horas)" placeholder="Seleccione la duración" wire:model="form.duration"/>
-    </div>
+<div class="my-2 md:mr-2 md:mb-0 w-full">
+    <label for="duration" class="block text-sm font-medium text-gray-700">Duración (en horas)</label>
+    <select id="duration" name="duration" wire:model="form.duration" class="mt-1 block w-full p-2 border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+        <option value="1">1 hora</option>
+        <option value="2">2 horas</option>
+        <option value="3">3 horas</option>
+    </select>
+</div>
 
-    <div class="my-2 md:mr-2 md:mb-0 w-full">
+
+    {{-- <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-input label="Material de Inducción" placeholder="Ejemplo: Presentación, PDF, etc." wire:model="form.material_id"/>
-    </div>
-    <div class="my-2 md:mr-2 md:mb-0 w-full">
+    </div> --}}
+
+    {{-- <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <x-native-select
+        icon="list-bullet"
+            label="Selecione Participante"
+            placeholder="Ver Participante"
+            :options="$competitors->pluck('name')"
+            wire:model="form.name"        />
+    </div> --}}
+
+
+    {{-- <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-input label="Participante" placeholder="Ejemplo juan jimanes" wire:model="form.competitor_id"/>
-    </div>
+    </div> --}}
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-input label="Enlace de Zoom o Meet" placeholder="Ejemplo: https://www.zoom.com" wire:model="form.link"/>

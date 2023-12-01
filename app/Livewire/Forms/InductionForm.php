@@ -29,24 +29,33 @@ class InductionForm extends Form
 
     #[Rule('required|url')]
      public $link;
-     #[Rule('required')]
-     public $material_id;
-     #[Rule('required')]
-     public $competitor_id;
+
+     #[Rule('required|url')]
+     public $file_type;
+
+     #[Rule('required|')]
+     public $title;
+    //  #[Rule('required')]
+    //  public $material_id;
+    //  #[Rule('required')]
+    //  public $competitor_id;
 
 
     public function setForm(Induction $induction)
     {
+
         $this->induction = $induction;
         $this->date = $induction->date;
+        $this->title = $induction->title;
         $this->location = $induction->location;
         $this->time = $induction->time;
         $this->responsible = $induction->responsible;
         $this->duration = $induction->duration;
 
          $this->link = $induction->link;
-         $this->material_id = $induction->material_id;
-         $this->competitor_id = $induction->competitor_id;
+         $this->file_type = $induction->file_type;
+        //  $this->material_id = $induction->material_id;
+        //  $this->competitor_id = $induction->competitor_id;
     }
 
     public function resetForm()

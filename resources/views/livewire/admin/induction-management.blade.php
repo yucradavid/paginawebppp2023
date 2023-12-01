@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4 dark:bg-gray-800/50 dark:bg-gradient-to-bl">
+        <div class="bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl p-4 sm:rounded-lg overflow-hidden shadow-xl">
             <div class="flex items-center justify-between dark:text-gray-400">
                 <!-- Input de búsqueda -->
                 <div class="mb-2 w-full">
@@ -23,38 +23,54 @@
 
             <!-- Lista de items -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
-                @forelse($inductions as $item)
-                    <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
+                @forelse($inductions and $materials as $item)
+                    <div class="bg-white sm:rounded-lg overflow-hidden shadow-lg p-4 space-y-4 transition duration-300 transform hover:scale-105">
 
-                        <img src="{{ $item->inductions }}" class="w-full h-48 object-cover mb-4 rounded-md" alt="inductions">
-                        {{-- <img src="{{Storage::url($item->image->url)}}" alt=""> --}}
-
+                        <a href="{{ $item->url }}">
+                            <p class="text-center text-xl font-semibold text-gray-800 hover:text-indigo-600 transition duration-300">{{ $item->title }}</p>
+                        </a>
 
                         <div class="text-gray-900">
                             <strong>ID:</strong> {{ $item->id }}<br>
                             <strong>Fecha: </strong>{{ $item->date }}<br>
-                            <strong>Encargado: </strong>{{ $item->location }}<br>
-                            <strong>Hora: </strong>{{ $item->time }}<br>
-                            <strong>Tema Principal: </strong>{{ $item->responsible }}<br>
+                            <strong>Lugar: </strong>{{ $item->location }}<br>
+                            <strong>Hora de la inducción: </strong>{{ $item->time }}<br>
+                            <strong>Responsable: </strong>{{ $item->responsible }}<br>
                             <strong>Duración: </strong>{{ $item->duration }}<br>
+
+                            <strong>Archivo:</strong>
+                            <a href="{{  $item->file_type }}" class="text-blue-500 underline">{{  $item->file_type }}</a><br>
+
+
                             <strong>Enlace de Meet o Zoom:</strong>
                             <a href="{{ $item->link }}" class="text-blue-500 underline">{{ $item->link }}</a><br>
-                            <strong>Material:</strong> {{ $item->material_id }}<br>
-                            <strong>Participante: </strong>{{ $item->competitor_id }}<br>
+                            {{-- <strong>Material:</strong> {{ $item->material_id }}<br> --}}
+                            {{-- <strong>Participante: </strong>{{ $item->competitor_id }}<br> --}}
+                            <td>
+                                @if (!empty($item->getRoleNames()))
+                                    @foreach ($item->getRoleNames() as $competitor)
+                                        <p><span
+                                                class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                                                {{ $competitor }}</span>
+                                        </p>
+                                    @endforeach
+                                @endif
+                            </td>
                         </div>
-                        <div class="flex justify-between">
-                            <a href="{{ $item->enlace }}" class="btn btn-primary btn-sm">Unirse a la Sesión</a>
-                            <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+
+                        <div class="flex justify-between items-center">
+                            <a href="{{ $item->enlace }}" class="bg-indigo-500 text-white py-2 px-4 rounded-full text-sm hover:bg-indigo-600 transition duration-300">Unirse a la Sesión</a>
+                            <a href="#" class="text-indigo-500 hover:underline">Ver más</a>
                         </div>
+
                         <div class="flex gap-1 justify-end">
                             <x-button.circle primary icon="pencil" wire:click="edit({{ $item }})" />
-                            <x-button.circle negative icon="x"
-                                x-on:confirm="{
-                                    title: 'Seguro que deseas eliminar?',
-                                    icon: 'warning',
-                                    method: 'destroy',
-                                    params: {{ $item }}
-                                }" />
+                            <x-button.circle negative icon="x" x-on:confirm="{
+                                title: '¿Seguro que deseas eliminar?',
+                                icon: 'warning',
+                                method: 'destroy',
+                                params: {{ $item }}
+                            }" />
                         </div>
                     </div>
                 @empty
@@ -68,3 +84,5 @@
         </div>
     </div>
 </div>
+
+

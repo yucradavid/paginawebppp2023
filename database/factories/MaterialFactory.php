@@ -18,7 +18,7 @@ class MaterialFactory extends Factory
     {
         return [
             'name' => $this->faker->word, // Assuming your Material model has a 'name' field
-            'file_type' => $this->faker->sentence,
+            'file_type' => $this->faker->url,
         ];
     }
 }

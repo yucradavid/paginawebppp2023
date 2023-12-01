@@ -18,15 +18,20 @@ class InductionFactory extends Factory
      */
     public function definition(): array
     {
+        //$file = $this->faker->file('public/storage/inductions', 'storage/inductions', false);
         return [
+            'title' => $this->faker->word(),
             'date' => $this->faker->date(),
             'location' => $this->faker->word,
             'time' => $this->faker->time,
             'responsible' => $this->faker->name,
             'duration' => $this->faker->numberBetween(1, 24),
             'link' => $this->faker->url,
-            'material_id' => Material::factory(),
-            'competitor_id' => Competitor::factory()
+            'file_type' => $this->faker->url,
+            'material_id' => optional(Material::factory())->create()->id,
+            'competitor_id' => optional(Competitor::factory())->create()->id,
+
+
         ];
     }
 }

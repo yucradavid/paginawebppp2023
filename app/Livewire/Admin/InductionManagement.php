@@ -3,7 +3,9 @@
 namespace App\Livewire\Admin;
 
 use App\Livewire\Forms\InductionForm;
+use App\Models\Competitor;
 use App\Models\Induction;
+use App\Models\Material;
 use Livewire\Component;
 use Livewire\WithPagination;
 use WireUi\Traits\Actions;
@@ -24,7 +26,8 @@ public function render()
                             ->latest('id')
                             ->paginate(6);
 
-    return view('livewire.admin.induction-management', compact('inductions'));
+    $materials=Material::all();
+        return view('livewire.admin.induction-management',compact('inductions','materials'));
 }
 
 // ...
@@ -62,6 +65,7 @@ public function render()
     {
         $this->form->setForm($induction);
         $this->isOpen = true;
+
     }
 
     public function destroy(Induction $induction)

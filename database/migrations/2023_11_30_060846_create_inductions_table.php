@@ -13,16 +13,19 @@ return new class extends Migration
     {
         Schema::create('inductions', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->date('date'); // Add the 'date' field of type date
             $table->string('location'); // Add the 'location' field of type string
             $table->time('time'); // Add the 'time' field of type time
             $table->string('responsible'); // Add the 'responsible' field of type string
             $table->integer('duration'); // Add the 'duration_in_hours' field of type integer
-
+            $table->string('file_type');
             $table->string('link');
-            $table->unsignedBigInteger('material_id');
+            $table->unsignedBigInteger('material_id')->nullable(); // Permitir valores nulos
+
             $table->foreign('material_id')->references('id')->on('materials')->onDelete('cascade');
-            $table->unsignedBigInteger('competitor_id');
+
+            $table->unsignedBigInteger('competitor_id')->nullable(); // Permitir valores nulos
 
 
             $table->foreign('competitor_id')->references('id')->on('competitors')->onDelete('cascade');
