@@ -39,32 +39,16 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
-<<<<<<< HEAD
 
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('admin.evaluation') }}" :active="request()->routeIs('admin.evaluation')">
-                        {{ __('Supervisión de Evaluación del Desempeño') }}
-                    </x-nav-link>
-                </div>
-                @endcan
-
-
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('admin.userinduction') }}" :active="request()->routeIs('admin.userinduction')">
-                        {{ __('Ver Induccion') }}
-                    </x-nav-link>
-                </div>
-
-
-<div class="mt-2">
-=======
-=======
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.coordis') }}" :active="request()->routeIs('admin.coordis')">
                         {{ __('Coordinador') }}
                     </x-nav-link>
->>>>>>> 33f520e6febb15523ab81ca474e95abb6377ff1f
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.criterias') }}" :active="request()->routeIs('admin.criterias')">
+                            {{ __('criterios de evaluacion') }}
+                        </x-nav-link>
 
         </div>
 

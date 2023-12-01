@@ -14,15 +14,4 @@ class Criteria extends Model
         return $this->hasMany(Evaluation::class);
     }
 }
-$criteria = Criteria::find(1);
 
-// Acceder a las evaluaciones relacionadas
-$evaluations = $criteria->evaluations;
-
-// Ahora, puedes iterar sobre las evaluaciones y acceder a sus atributos
-foreach ($evaluations as $evaluation) {
-    $comments = $evaluation->comments;
-    $qualification = $evaluation->qualification;
-    $state = $evaluation->state;
-    // ... y así sucesivamente
-}
