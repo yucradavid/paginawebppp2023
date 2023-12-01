@@ -1,7 +1,7 @@
 <div class="py-5">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            GESTION COORDINADOR
+            GESTION SUPERVISION -Cordinador
         </h2>
     </x-slot>
 
@@ -27,7 +27,7 @@
             <!-- Lista de items -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
                 @forelse($practicantes and $supervisors and $practicings as $item)
-                    <div class="bg-gray-500 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
+                    <div class="bg-gray-200 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
                         <img src="{{ $item->images }}" class="w-full h-48 object-cover mb-4 rounded-md" alt="images">
                         <div class="text-gray-900">
                             <strong>ID:</strong> {{ $item->id }}<br>
