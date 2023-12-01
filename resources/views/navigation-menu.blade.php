@@ -37,17 +37,18 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
+
 =======
                 <div class="mt-2">
-            
+
         </div>
 >>>>>>> 48e80d060b20a18c59b057f5864a313763c88268
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
 
-            
-            
+
+
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
