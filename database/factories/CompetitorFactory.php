@@ -21,6 +21,7 @@ class CompetitorFactory extends Factory
             'code' => $this->faker->unique()->randomNumber(5),
             'cycle' => $this->faker->word,
             'cluster' => $this->faker->word,
+            'attendance' => $this->faker->boolean,
         ];
     }
 }

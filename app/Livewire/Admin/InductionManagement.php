@@ -22,7 +22,7 @@ class InductionManagement extends Component
 
 public function render()
 {
-    $inductions = Induction::where('date', 'like', '%' . $this->search . '%')
+    $inductions = Induction::where('title', 'like', '%' . $this->search . '%')
                             ->latest('id')
                             ->paginate(6);
 

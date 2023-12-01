@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('code'); // Agrega el campo 'codigo' de tipo string
             $table->string('cycle'); // Agrega el campo 'ciclo' de tipo string
             $table->string('cluster');
+            $table->boolean('attendance')->default(false);
             $table->timestamps();
         });
     }

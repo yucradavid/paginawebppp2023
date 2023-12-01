@@ -37,7 +37,6 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
-
 =======
                 <div class="mt-2">
 
