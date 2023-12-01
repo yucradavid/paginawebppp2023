@@ -12,6 +12,7 @@ Route::get('/users', UserManagement::class)->name('users');
 
 Route::get('/roles', RoleManagement::class)->name('roles');
 Route::get('/coordis',CoordiManagement::class)->name('coordis');
+Route::get('/voting-result',[CoordiManagement::class,'generateReport'])->name('voting-result');
 
 Route::get('/inductions',InductionManagement::class)->middleware('can:Ver dashboard')->name('inductions');
 Route::get('/competitors',CompetitorManagement::class)->middleware('can:Ver dashboard')->name('competitors');

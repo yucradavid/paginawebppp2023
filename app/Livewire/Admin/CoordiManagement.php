@@ -70,10 +70,11 @@ class CoordiManagement extends Component
         $this->reset(['isOpen']);
     }
 
-    public function edit(Practicante $practicante){
-        //$this->form=$period->toArray();
+    public function edit(Practicante $practicante)
+    {
         $this->form->setForm($practicante);
-        $this->isOpen=true;
+        $this->isOpen = true;
+
     }
 
     public function destroy(Practicante $practicante){
