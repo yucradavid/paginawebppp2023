@@ -36,7 +36,7 @@ class InductionForm extends Form
      #[Rule('required|')]
      public $title;
     //  #[Rule('required')]
-    //  public $material_id;
+      public $material_id;
     //  #[Rule('required')]
     //  public $competitor_id;
 

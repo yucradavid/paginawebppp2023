@@ -16,17 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+            @can('Listar estudiantes')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.users') }}" :active="request()->routeIs('admin.users')">
                         {{ __('Usuario') }}
                     </x-nav-link>
                 </div>
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.roles') }}" :active="request()->routeIs('admin.roles')">
                         {{ __('Roles') }}
                     </x-nav-link>
                 </div>
-<<<<<<< HEAD
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.inductions') }}" :active="request()->routeIs('admin.inductions')">
                         {{ __('Organizar Inducción') }}
@@ -37,18 +39,47 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
+<<<<<<< HEAD
+
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('admin.evaluation') }}" :active="request()->routeIs('admin.evaluation')">
+                        {{ __('Supervisión de Evaluación del Desempeño') }}
+                    </x-nav-link>
+                </div>
+                @endcan
+
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('admin.userinduction') }}" :active="request()->routeIs('admin.userinduction')">
+                        {{ __('Ver Induccion') }}
+                    </x-nav-link>
+                </div>
+
+
+<div class="mt-2">
+=======
 =======
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.coordis') }}" :active="request()->routeIs('admin.coordis')">
                         {{ __('Coordinador') }}
                     </x-nav-link>
+>>>>>>> 33f520e6febb15523ab81ca474e95abb6377ff1f
 
         </div>
->>>>>>> 48e80d060b20a18c59b057f5864a313763c88268
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
-
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <x-responsive-nav-link href="{{ route('logout') }}"
+                                       @click.prevent="$root.submit();">
+                        <button type="submit" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                            {{ __('Cerrar Sesión') }}
+                        </button>
+                    </x-responsive-nav-link>
+                </form>
 
 
                 <!-- Teams Dropdown -->

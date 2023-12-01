@@ -32,6 +32,7 @@
                             <td scope="col" class="px-6 py-3">code</td>
                             <td scope="col" class="px-6 py-3">cycle</td>
                             <td scope="col" class="px-6 py-3">cluster</td>
+                            <td scope="col" class="px-6 py-3">Asistencia</td>
                             <td scope="col" class="px-6 py-3 text-center">Opciones</td>
                         </tr>
                     </thead>
@@ -49,7 +50,7 @@
                                 <td class="px-6 py-4 dark:text-gray-400">{{ $item->cycle}}</td>
                                 <td class="px-6 py-4 dark:text-gray-400">{{ $item->cluster}}</td>
 
-
+                                 <td class="px-6 py-4 dark:text-gray-400">{{ $item->attendance}}</td>
                                 <td class="px-6 py-4 flex gap-1 justify-end" style="margin-right: 135px">
                                     <x-button.circle primary icon="pencil" wire:click="edit({{$item}})" />
                                     <x-button.circle negative icon="x"

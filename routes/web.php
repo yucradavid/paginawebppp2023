@@ -27,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+Route::get('/voting-result',[ResulMain::class,'generateReport'])->name('voting-result');
+Route::get('/results',[ResulMain::class])->name('results');
