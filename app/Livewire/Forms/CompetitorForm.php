@@ -22,6 +22,8 @@ class CompetitorForm extends Form
 
     #[Rule('required')]
     public $cluster;
+    #[Rule('required')]
+    public $attendance;
 
     public function setForm(Competitor $competitor)
     {
@@ -30,6 +32,8 @@ class CompetitorForm extends Form
         $this->code = $competitor->code;
         $this->cycle = $competitor->cycle;
         $this->cluster = $competitor->cluster;
+        $this->attendance = $competitor->attendance;
+
     }
 
     public function resetForm()

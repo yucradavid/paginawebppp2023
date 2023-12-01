@@ -27,13 +27,23 @@
         <x-input label="Lugar de la Inducción" placeholder="Ejemplo: Aula Magna" wire:model="form.location"/>
     </div>
 
-    <div class="my-2 md:mr-2 md:mb-0 w-full">
+    {{-- <div class="my-2 md:mr-2 md:mb-0 w-full">
         <x-native-select
-        icon="list-bullet"
-            label="Selecione El Archivo"
+            icon="list-bullet"
+            label="Seleccione El Archivo"
             placeholder="Ver Archivos"
             :options="$materials->pluck('file_type')"
-            wire:model="form.file_type"        />
+            wire:model="form.file_type"
+        />
+    </div> --}}
+
+    {{-- <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <label for="file_type" class="block text-sm font-medium text-gray-700">Enlace del Archivo</label>
+        <input type="text" name="file_type" id="file_type" wire:model="form.file_type" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+        @error('form.file_type') <span class="error">{{ $message }}</span> @enderror
+    </div> --}}
+   <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <x-input label="Enlace de Zoom o Meet" placeholder="Ejemplo: https://www.zoom.com" wire:model="form.file_type"/>
     </div>
 
     <div class="my-2 md:mr-2 md:mb-0 w-full">
