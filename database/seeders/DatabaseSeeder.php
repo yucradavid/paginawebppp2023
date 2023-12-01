@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
         //Usuario administrador
         $this->call(UserSeeder::class);
-        //$this->call(SupervisorSeeder::class);
+        $this->call(SupervisorSeeder::class);
         $this->call(PracticingSeeder::class);
         $this->call(PracticanteSeeder::class);
         Competitor::factory(10)->create();

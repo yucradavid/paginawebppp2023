@@ -29,4 +29,5 @@ class SupervisorSeeder extends Seeder
             'name'=>'ING.David Manani',
         ]);
     }
+
 }

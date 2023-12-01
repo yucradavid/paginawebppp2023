@@ -6,6 +6,7 @@ use App\Livewire\Admin\EvaluationManagement;
 use App\Livewire\Admin\InductionManagement;
 use App\Livewire\Admin\RoleManagement;
 
+
 use App\Livewire\Admin\UserInductionManagement;
 
 use App\Livewire\Admin\CoordiManagement;
@@ -26,3 +27,6 @@ Route::get('/competitors',CompetitorManagement::class)->middleware('can:Ver dash
 Route::get('/evaluation',EvaluationManagement::class)->middleware('can:Ver dashboard')->name('evaluation');
 Route::get('/userinduction',UserInductionManagement::class)->middleware('can:Listar empresas')->name('userinduction');
 //Route::get('/voting-result',[ResulMain::class,'generateReport'])->name('voting-result');
+//Route::get('/voting-result',[ResulMain::class,'generateReport'])->name('voting-result');
+Route::get('/criterias',CriteriaManagement::class)->middleware('can:Ver dashboard')->name('criterias');
+Route::get('/voting-result2',[CoordiManagement::class,'generateReport2'])->name('voting-result2');

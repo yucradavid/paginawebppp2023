@@ -42,6 +42,7 @@
 
 
 
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.evaluation') }}" :active="request()->routeIs('admin.evaluation')">
                         {{ __('Supervisión de Evaluación del Desempeño') }}
@@ -60,10 +61,19 @@
 <div class="mt-2">
 
 
+
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('admin.coordis') }}" :active="request()->routeIs('admin.coordis')">
                         {{ __('Gestion Supervisor') }}
                     </x-nav-link>
+
+
+                    <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                        <x-nav-link href="{{ route('admin.criterias') }}" :active="request()->routeIs('admin.criterias')">
+                            {{ __('criterios de evaluacion') }}
+                        </x-nav-link>
+
 
         </div>
 

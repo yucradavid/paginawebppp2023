@@ -14,3 +14,4 @@ class Criteria extends Model
         return $this->hasMany(Evaluation::class);
     }
 }
+

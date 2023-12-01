@@ -1,12 +1,12 @@
 <div class="py-5">
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight text-center">
             GESTION COORDINADOR
         </h2>
     </x-slot>
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4 dark:bg-gray-800/50 dark:bg-gradient-to-bl">
+        <div class="bg-slate-900 overflow-hidden shadow-xl sm:rounded-lg px-4 py-4 dark:bg-gray-800/50 dark:bg-gradient-to-bl">
             <div class="flex items-center justify-between dark:text-gray-400">
                 <!-- Input de búsqueda -->
                 <div class="mb-2 w-full">
@@ -19,17 +19,17 @@
                         @include('livewire.admin.coordi-create')
                     @endif
                 </div>
-                            <!-- PRUEBA -->
-                        <div>
-                            <x-button href="{{route('admin.voting-result')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
-                        </div>
+                    <h2></h2>        <!-- PRUEBA -->
+                <div>
+                    <x-button href="{{route('admin.voting-result')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
+                </div>
 
             </div>
 
             <!-- Lista de items -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
                 @forelse($practicantes and $supervisors and $practicings as $item)
-                    <div class="bg-gray-500 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
+                    <div class="bg-gray-200 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
                         <h2>DATOS</h2>
                         <div class="text-gray-900">
                             <strong>ID:</strong> {{ $item->id }}<br>
@@ -42,14 +42,16 @@
                             <strong>actualizado: </strong>{{ $item->updated_at }}<br>
                         </div>
                         <div class="flex justify-between">
-                            <a href="{{ $item->enlace }}" class="btn btn-primary btn-sm">Ver Calificaciones</a>
+                            <a href="{{ $item->enlace }}" class="btn btn-danger btn-sm">Ver Calificaciones</a>
+
                             <x-nav-link href="{{ route('admin.evaluation') }}" :active="request()->routeIs('admin.evaluation')">
-                                {{ __('Supervisión de Evaluación del Desempeño') }}
-                            </x-nav-link>                        </div>
+                                {{ __('Mas') }}
+                            </x-nav-link>
+                        </div>
                         <div class="flex gap-1 justify-end">
 
                             <div>
-                                <x-button href="{{route('admin.voting-result')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
+                                <x-button href="{{route('admin.voting-result2')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
                             </div>
                             <x-button.circle primary icon="pencil" wire:click="edit({{ $item }})" />
 

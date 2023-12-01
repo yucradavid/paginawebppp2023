@@ -41,7 +41,16 @@ class CoordiManagement extends Component
 
         $pdf = FacadePdf::loadView('reports.voting-result',compact('practicantes','supervisors'));
         return $pdf->stream('practicantes_lista.pdf'); //para descargar es download en ves de stream(que es stream)asi =
-        return $pdf->download('practicantes_lista.pdf');
+        //return $pdf->download('practicantes_lista.pdf');
+    }
+
+    public function generateReport2(){
+        $practicantes=Practicante::where('practicante','LIKE','%'.$this->search.'%')->paginate();
+        $supervisors=Supervisor::all();
+
+        $pdf = FacadePdf::loadView('reports.voting-result2',compact('practicantes','supervisors'));
+        return $pdf->stream('practicantes_lista.pdf'); //para descargar es download en ves de stream(que es stream)asi =
+        //return $pdf->download('practicantes_lista.pdf');
     }
 
     public function create(){
