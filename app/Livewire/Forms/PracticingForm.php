@@ -15,10 +15,14 @@ class PracticingForm extends Form
     #[Rule('required|min:3')]
     public $name;
 
+    //#[Rule('required|min:3')]
+    //public $cellphone;
+
 
     public function setForm(Practicing $practicings){
         $this->practicings = $practicings;
         $this->name = $practicings->name;
+        //$this->cellphone = $practicings->cellphone;
 
     }
 

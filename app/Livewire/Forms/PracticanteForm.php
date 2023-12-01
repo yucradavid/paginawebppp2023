@@ -23,12 +23,16 @@ class PracticanteForm extends Form
     #[Rule('required|min:3')]
     public $empresa;
 
+    #[Rule('required|min:3')]
+    public $cellphone;
+
     public function setForm(Practicante $practicantes){
         $this->practicantes = $practicantes;
         $this->practicante = $practicantes->practicante;
         $this->supervisor = $practicantes->supervisor;
         $this->etapa = $practicantes->etapa;
         $this->empresa = $practicantes->empresa;
+        $this->cellphone = $practicantes->cellphone;
     }
 
     public function resetForm(){

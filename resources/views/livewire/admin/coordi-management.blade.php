@@ -1,7 +1,7 @@
 <div class="py-5">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            GESTION SUPERVISION -Cordinador
+            GESTION COORDINADOR
         </h2>
     </x-slot>
 
@@ -19,16 +19,17 @@
                         @include('livewire.admin.coordi-create')
                     @endif
                 </div>
-                            <!-- PRUEBA
-
-                        -->
+                            <!-- PRUEBA -->
+                        <div>
+                            <x-button href="{{route('admin.voting-result')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
+                        </div>
 
             </div>
 
             <!-- Lista de items -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
                 @forelse($practicantes and $supervisors and $practicings as $item)
-                    <div class="bg-gray-200 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
+                    <div class="bg-gray-500 overflow-hidden shadow-lg sm:rounded-lg p-4 space-y-4">
                         <img src="{{ $item->images }}" class="w-full h-48 object-cover mb-4 rounded-md" alt="images">
                         <div class="text-gray-900">
                             <strong>ID:</strong> {{ $item->id }}<br>
@@ -36,19 +37,19 @@
                             <strong>Supervisor: </strong>{{ $item->supervisor }}<br>
                             <strong>Etapa: </strong>{{ $item->etapa }}<br>
                             <strong>Empresa: </strong>{{ $item->empresa }}<br>
-                            <strong>Enlace de Meet o Zoom:</strong>
-                            <a href="{{ $item->link }}" class="text-blue-500 underline">{{ $item->link }}</a><br>
+                            <strong>Comunicarse: </strong>{{ $item->cellphone }}<br>
                             <strong>creado:</strong> {{ $item->created_at }}<br>
                             <strong>actualizado: </strong>{{ $item->updated_at }}<br>
                         </div>
                         <div class="flex justify-between">
                             <a href="{{ $item->enlace }}" class="btn btn-primary btn-sm">Ver Calificaciones</a>
-                            <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+                            <a href="{{ $item->cellphone }}" class="btn btn-primary btn-sm">Ver más</a>
                         </div>
                         <div class="flex gap-1 justify-end">
 
-                            <!--
-                            -->
+                            <div>
+                                <x-button href="{{route('admin.voting-result')}}"  icon="printer" label="Imprimir   " target="_blank" teal/>
+                            </div>
                             <x-button.circle primary icon="pencil" wire:click="edit({{ $item }})" />
 
                             <x-button.circle negative icon="x"

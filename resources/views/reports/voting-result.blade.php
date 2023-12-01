@@ -11,11 +11,11 @@
         font-family: Arial, Helvetica, sans-serif;
     }
     thead {
-        background-color: green;
+        background-color:blue;
         color: white;
     }
     th, td {
-        padding: 10px;
+        padding: 15px;
     }
     h3{
         text-align: center;
@@ -46,6 +46,7 @@
                     <th>supervisor</th>
                     <th>etapa</th>
                     <th>empresa</th>
+                    <th>Comunicarse</th>
                     <th>creacion</th>
 
                 </tr>
@@ -58,6 +59,7 @@
                     <td>{{$item->supervisor}}</td>
                     <td>{{$item->etapa}}</td>
                     <td>{{$item->empresa}}</td>
+                    <td>{{$item->cellphone}}</td>
                     <td>{{$item->created_at}}</td>
 
                 </tr>

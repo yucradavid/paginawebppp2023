@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('supervisor');
             $table->string('etapa');
             $table->string('empresa');
+            $table->string('cellphone');
+
             $table->timestamps();
         });
     }

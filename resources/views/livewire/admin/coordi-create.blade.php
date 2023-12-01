@@ -43,6 +43,10 @@
         <x-input icon="briefcase" label="Nombre EMPRESA" placeholder="coordenadas de la empresa" wire:model="form.empresa"/>
     </div>
 
+    <div class="my-2 md:mr-2 md:mb-0 w-full">
+        <x-input icon="briefcase" label="Nro Celular" placeholder="ingrese numero" wire:model="form.cellphone"/>
+    </div>
+
 
 
     <x-slot name="footer">
