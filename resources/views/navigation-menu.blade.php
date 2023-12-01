@@ -39,6 +39,7 @@
                         {{ __('Ejecutar Inducción') }}
                     </x-nav-link>
                 </div>
+<<<<<<< HEAD
 
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
@@ -57,6 +58,13 @@
 
 
 <div class="mt-2">
+=======
+=======
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link href="{{ route('admin.coordis') }}" :active="request()->routeIs('admin.coordis')">
+                        {{ __('Coordinador') }}
+                    </x-nav-link>
+>>>>>>> 33f520e6febb15523ab81ca474e95abb6377ff1f
 
         </div>
 
